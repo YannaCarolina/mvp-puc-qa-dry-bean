@@ -67,8 +67,9 @@ A API ficará disponível em:
 ## Como executar o frontend
 
 Com o backend em execução, abra o arquivo abaixo no navegador:
-- frontend/index.html
-
+```text
+frontend/index.html
+```
 Preencha os campos com as características do grão e clique em Prever variedade para visualizar a classe prevista pelo modelo.
 
 ## Como executar o teste automatizado
