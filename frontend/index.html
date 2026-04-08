@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dry Bean Classifier</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Classificação de Feijão</h1>
+    <p class="subtitle">
+      Informe as características do grão para obter a previsão da variedade.
+    </p>
+
+    <form id="prediction-form" class="form-grid">
+      <label>
+        Area
+        <input type="number" step="any" name="Area" required>
+      </label>
+
+      <label>
+        Perimeter
+        <input type="number" step="any" name="Perimeter" required>
+      </label>
+
+      <label>
+        MajorAxisLength
+        <input type="number" step="any" name="MajorAxisLength" required>
+      </label>
+
+      <label>
+        MinorAxisLength
+        <input type="number" step="any" name="MinorAxisLength" required>
+      </label>
+
+      <label>
+        AspectRation
+        <input type="number" step="any" name="AspectRation" required>
+      </label>
+
+      <label>
+        Eccentricity
+        <input type="number" step="any" name="Eccentricity" required>
+      </label>
+
+      <label>
+        ConvexArea
+        <input type="number" step="any" name="ConvexArea" required>
+      </label>
+
+      <label>
+        EquivDiameter
+        <input type="number" step="any" name="EquivDiameter" required>
+      </label>
+
+      <label>
+        Extent
+        <input type="number" step="any" name="Extent" required>
+      </label>
+
+      <label>
+        Solidity
+        <input type="number" step="any" name="Solidity" required>
+      </label>
+
+      <label>
+        roundness
+        <input type="number" step="any" name="roundness" required>
+      </label>
+
+      <label>
+        Compactness
+        <input type="number" step="any" name="Compactness" required>
+      </label>
+
+      <label>
+        ShapeFactor1
+        <input type="number" step="any" name="ShapeFactor1" required>
+      </label>
+
+      <label>
+        ShapeFactor2
+        <input type="number" step="any" name="ShapeFactor2" required>
+      </label>
+
+      <label>
+        ShapeFactor3
+        <input type="number" step="any" name="ShapeFactor3" required>
+      </label>
+
+      <label>
+        ShapeFactor4
+        <input type="number" step="any" name="ShapeFactor4" required>
+      </label>
+
+      <button type="submit" class="submit-button">Prever classe</button>
+    </form>
+
+    <section class="result-box">
+      <h2>Resultado</h2>
+      <p id="result">Preencha os campos e clique em "Prever classe".</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
