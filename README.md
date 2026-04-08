@@ -61,8 +61,8 @@ Depois, execute a API com:
 uvicorn backend.app:app --reload --port 8001
 ```
 A API ficará disponível em:
-http://127.0.0.1:8001
-http://127.0.0.1:8001/docs
+- http://127.0.0.1:8001
+- http://127.0.0.1:8001/docs
 
 ## Como executar o frontend
 
