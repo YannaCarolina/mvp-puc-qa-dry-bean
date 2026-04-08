@@ -30,25 +30,25 @@ notebook/mvp_puc_qa_dry_bean.ipynb
 
 Nele são contempladas as etapas de:
 
-carga do dataset por URL;
-análise inicial dos dados;
-separação entre treino e teste;
-normalização e padronização;
-treinamento dos algoritmos KNN, Árvore de Classificação, Naive Bayes e SVM;
-otimização de hiperparâmetros;
-avaliação e comparação dos modelos;
-exportação do melhor modelo;
-conclusão e reflexão sobre boas práticas de software seguro.
+- carga do dataset por URL;
+- análise inicial dos dados;
+- separação entre treino e teste;
+- normalização e padronização;
+- treinamento dos algoritmos KNN, Árvore de Classificação, Naive Bayes e SVM;
+- otimização de hiperparâmetros;
+- avaliação e comparação dos modelos;
+- exportação do melhor modelo;
+- conclusão e reflexão sobre boas práticas de software seguro.
 
 ## Tecnologias utilizadas
 
-Python
-Scikit-Learn
-FastAPI
-HTML
-CSS
-JavaScript
-PyTest
+- Python
+- Scikit-Learn
+- FastAPI
+- HTML
+- CSS
+- JavaScript
+- PyTest
 
 ## Como executar o backend
 
