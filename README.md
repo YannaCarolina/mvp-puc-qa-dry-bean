@@ -57,8 +57,9 @@ Na raiz do projeto, instale as dependências com:
 python3 -m pip install -r backend/requirements.txt
 ```
 Depois, execute a API com:
+```text
 uvicorn backend.app:app --reload --port 8001
-
+```
 A API ficará disponível em:
 http://127.0.0.1:8001
 http://127.0.0.1:8001/docs
@@ -73,7 +74,9 @@ Preencha os campos com as características do grão e clique em Prever variedade
 ## Como executar o teste automatizado
 
 Na raiz do projeto, execute:
+```text
 pytest tests/test_model_performance.py
+```
 O teste valida se o modelo atende ao threshold mínimo de desempenho definido para o projeto.
 
 ## Dataset utilizado
