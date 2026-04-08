@@ -21,7 +21,9 @@ mvp-puc-qa-dry-bean/
 ├── tests/
 │   └── test_model_performance.py
 └── README.md
-Notebook de machine learning
+```text
+
+## Notebook de machine learning
 O notebook com o processo completo de construção e avaliação do modelo está disponível em:
 
 notebook/mvp_puc_qa_dry_bean.ipynb
@@ -37,7 +39,9 @@ otimização de hiperparâmetros;
 avaliação e comparação dos modelos;
 exportação do melhor modelo;
 conclusão e reflexão sobre boas práticas de software seguro.
-Tecnologias utilizadas
+
+##Tecnologias utilizadas
+
 Python
 Scikit-Learn
 FastAPI
@@ -45,34 +49,39 @@ HTML
 CSS
 JavaScript
 PyTest
-Como executar o backend
+
+##Como executar o backend
+
 Na raiz do projeto, instale as dependências com:
-
 python3 -m pip install -r backend/requirements.txt
+
 Depois, execute a API com:
-
 uvicorn backend.app:app --reload --port 8001
-A API ficará disponível em:
 
+A API ficará disponível em:
 http://127.0.0.1:8001
 http://127.0.0.1:8001/docs
-Como executar o frontend
-Com o backend em execução, abra o arquivo abaixo no navegador:
 
+##Como executar o frontend
+
+Com o backend em execução, abra o arquivo abaixo no navegador:
 frontend/index.html
 
 Preencha os campos com as características do grão e clique em Prever variedade para visualizar a classe prevista pelo modelo.
 
-Como executar o teste automatizado
-Na raiz do projeto, execute:
+##Como executar o teste automatizado
 
+Na raiz do projeto, execute:
 pytest tests/test_model_performance.py
 O teste valida se o modelo atende ao threshold mínimo de desempenho definido para o projeto.
 
-Dataset utilizado
+##Dataset utilizado
+
 Dry Bean Dataset
 Fonte: UCI Machine Learning Repository
-Observações finais
+
+##Observações finais
+
 O modelo final utilizado pela aplicação foi exportado a partir do notebook de machine learning e integrado ao backend para permitir a realização de predições por meio da interface web.
 
 Além da implementação técnica, o projeto também considera aspectos de qualidade e segurança, como validação de entrada, controle de dependências e teste automatizado de desempenho do modelo.
