@@ -26,7 +26,7 @@ mvp-puc-qa-dry-bean/
 ## Notebook de machine learning
 O notebook com o processo completo de construção e avaliação do modelo está disponível em:
 
-- [notebook/mvp_puc_qa_dry_bean.ipynb](https://colab.research.google.com/drive/1ns9sOYvQqLb2pmWIfZ738oM_0r9DlKzG?usp=sharing)
+- https://colab.research.google.com/drive/1ns9sOYvQqLb2pmWIfZ738oM_0r9DlKzG?usp=sharing
 
 Nele são contempladas as etapas de:
 
