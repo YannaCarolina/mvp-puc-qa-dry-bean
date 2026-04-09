@@ -16,111 +16,29 @@
       </p>
     </header>
 
+    <section class="example-box">
+      <h2>Exemplos prontos</h2>
+      <p class="example-text">Clique em um exemplo para preencher automaticamente o formulário.</p>
+      <div class="example-buttons">
+        <button type="button" class="example-button" data-example="SEKER">Exemplo SEKER</button>
+        <button type="button" class="example-button" data-example="HOROZ">Exemplo HOROZ</button>
+        <button type="button" class="example-button" data-example="CALI">Exemplo CALI</button>
+        <button type="button" class="example-button" data-example="BOMBAY">Exemplo BOMBAY</button>
+      </div>
+    </section>
+
     <form id="prediction-form" class="form-card">
       <section class="form-section">
         <h2>Medidas principais</h2>
         <div class="form-grid">
           <label>
             Área
-            <input type="number" step="any" name="Area" value="28395" required>
+            <input id="Area" type="number" step="any" name="Area" value="28395" required>
           </label>
 
           <label>
             Perímetro
-            <input type="number" step="any" name="Perimeter" value="610.291" required>
+            <input id="Perimeter" type="number" step="any" name="Perimeter" value="610.291" required>
           </label>
 
-          <label>
-            Comprimento do eixo maior
-            <input type="number" step="any" name="MajorAxisLength" value="208.178117" required>
-          </label>
-
-          <label>
-            Comprimento do eixo menor
-            <input type="number" step="any" name="MinorAxisLength" value="173.888747" required>
-          </label>
-
-          <label>
-            Área convexa
-            <input type="number" step="any" name="ConvexArea" value="28715" required>
-          </label>
-
-          <label>
-            Diâmetro equivalente
-            <input type="number" step="any" name="EquivDiameter" value="190.141097" required>
-          </label>
-        </div>
-      </section>
-
-      <section class="form-section">
-        <h2>Indicadores de forma</h2>
-        <div class="form-grid">
-          <label>
-            Razão de aspecto
-            <input type="number" step="any" name="AspectRation" value="1.197191" required>
-          </label>
-
-          <label>
-            Excentricidade
-            <input type="number" step="any" name="Eccentricity" value="0.549812" required>
-          </label>
-
-          <label>
-            Extensão
-            <input type="number" step="any" name="Extent" value="0.763923" required>
-          </label>
-
-          <label>
-            Solidez
-            <input type="number" step="any" name="Solidity" value="0.988855" required>
-          </label>
-
-          <label>
-            Arredondamento
-            <input type="number" step="any" name="roundness" value="0.958027" required>
-          </label>
-
-          <label>
-            Compacidade
-            <input type="number" step="any" name="Compactness" value="0.913358" required>
-          </label>
-        </div>
-      </section>
-
-      <section class="form-section">
-        <h2>Fatores derivados</h2>
-        <div class="form-grid">
-          <label>
-            Fator de forma 1
-            <input type="number" step="any" name="ShapeFactor1" value="0.007331" required>
-          </label>
-
-          <label>
-            Fator de forma 2
-            <input type="number" step="any" name="ShapeFactor2" value="0.003147" required>
-          </label>
-
-          <label>
-            Fator de forma 3
-            <input type="number" step="any" name="ShapeFactor3" value="0.834222" required>
-          </label>
-
-          <label>
-            Fator de forma 4
-            <input type="number" step="any" name="ShapeFactor4" value="0.998724" required>
-          </label>
-        </div>
-      </section>
-
-      <button type="submit" class="submit-button">Prever variedade</button>
-    </form>
-
-    <section class="result-box">
-      <h2>Resultado</h2>
-      <p id="result">Os campos já foram preenchidos com valores de exemplo. Clique em “Prever variedade” para testar.</p>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+         
