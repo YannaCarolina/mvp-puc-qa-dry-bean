@@ -1,131 +1,200 @@
-const form = document.getElementById("prediction-form");
-const resultElement = document.getElementById("result");
-const exampleButtons = document.querySelectorAll(".example-button");
-
-const apiUrl = "http://127.0.0.1:8001/predict";
-
-const examples = {
-  SEKER: {
-    Area: 28395,
-    Perimeter: 610.291,
-    MajorAxisLength: 208.178117,
-    MinorAxisLength: 173.888747,
-    AspectRation: 1.197191,
-    Eccentricity: 0.549812,
-    ConvexArea: 28715,
-    EquivDiameter: 190.141097,
-    Extent: 0.763923,
-    Solidity: 0.988855,
-    roundness: 0.958027,
-    Compactness: 0.913358,
-    ShapeFactor1: 0.007331,
-    ShapeFactor2: 0.003147,
-    ShapeFactor3: 0.834222,
-    ShapeFactor4: 0.998724
-  },
-  HOROZ: {
-    Area: 42147,
-    Perimeter: 749.527,
-    MajorAxisLength: 282.389044,
-    MinorAxisLength: 190.951162,
-    AspectRation: 1.478858,
-    Eccentricity: 0.736834,
-    ConvexArea: 42557,
-    EquivDiameter: 231.639889,
-    Extent: 0.760362,
-    Solidity: 0.990366,
-    roundness: 0.942444,
-    Compactness: 0.821774,
-    ShapeFactor1: 0.0067,
-    ShapeFactor2: 0.001875,
-    ShapeFactor3: 0.675313,
-    ShapeFactor4: 0.99855
-  },
-  CALI: {
-    Area: 38699,
-    Perimeter: 734.671,
-    MajorAxisLength: 252.624006,
-    MinorAxisLength: 196.325353,
-    AspectRation: 1.286757,
-    Eccentricity: 0.629407,
-    ConvexArea: 39135,
-    EquivDiameter: 222.021693,
-    Extent: 0.790052,
-    Solidity: 0.988858,
-    roundness: 0.901246,
-    Compactness: 0.880046,
-    ShapeFactor1: 0.006528,
-    ShapeFactor2: 0.002189,
-    ShapeFactor3: 0.774481,
-    ShapeFactor4: 0.997029
-  },
-  BOMBAY: {
-    Area: 69492,
-    Perimeter: 1001.291,
-    MajorAxisLength: 386.888,
-    MinorAxisLength: 229.437,
-    AspectRation: 1.686271,
-    Eccentricity: 0.805467,
-    ConvexArea: 70235,
-    EquivDiameter: 297.54,
-    Extent: 0.778,
-    Solidity: 0.98942,
-    roundness: 0.8711,
-    Compactness: 0.7685,
-    ShapeFactor1: 0.00557,
-    ShapeFactor2: 0.00134,
-    ShapeFactor3: 0.5906,
-    ShapeFactor4: 0.9981
-  }
-};
-
-function fillForm(exampleData, label) {
-  Object.entries(exampleData).forEach(([key, value]) => {
-    const input = document.getElementById(key);
-    if (input) {
-      input.value = value;
-    }
-  });
-
-  resultElement.textContent = `Exemplo ${label} carregado. Clique em “Prever variedade”.`;
+* {
+  box-sizing: border-box;
 }
 
-exampleButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const exampleName = button.dataset.example;
-    fillForm(examples[exampleName], exampleName);
-  });
-});
+:root {
+  --bg: #eef4fb;
+  --card: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --border: #dbe4ee;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
 
-form.addEventListener("submit", async (event) => {
-  event.preventDefault();
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+  color: var(--text);
+}
 
-  const formData = new FormData(form);
-  const payload = {};
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 56px;
+}
 
-  formData.forEach((value, key) => {
-    payload[key] = Number(value);
-  });
+.hero {
+  margin-bottom: 24px;
+}
 
-  resultElement.textContent = "Processando previsão...";
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
 
-  try {
-    const response = await fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    });
+h1 {
+  margin: 0 0 12px;
+  font-size: 2.4rem;
+  line-height: 1.1;
+}
 
-    if (!response.ok) {
-      throw new Error("Não foi possível obter a previsão.");
-    }
+.subtitle {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
 
-    const data = await response.json();
-    resultElement.textContent = `Classe prevista: ${data.predicted_class}`;
-  } catch (error) {
-    resultElement.textContent = "Erro ao conectar com a API.";
-    console.error(error);
+.form-card,
+.result-box {
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.form-card {
+  padding: 28px;
+}
+
+.form-section + .form-section {
+  margin-top: 28px;
+}
+
+.form-section h2 {
+  margin: 0 0 14px;
+  font-size: 1.2rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: #fcfdff;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
+}
+
+.submit-button {
+  margin-top: 28px;
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 18px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.submit-button:hover {
+  background: var(--primary-dark);
+}
+
+.result-box {
+  margin-top: 24px;
+  padding: 24px 28px;
+}
+
+.result-box h2 {
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+}
+
+#result {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.example-box {
+  margin-bottom: 24px;
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 24px 28px;
+}
+
+.example-box h2 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.example-text {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+.example-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.example-button {
+  border: 1px solid var(--border);
+  background: #f8fafc;
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.example-button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: #f0fdfa;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 24px 14px 40px;
   }
-});
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .form-card,
+  .result-box,
+  .example-box {
+    border-radius: 16px;
+  }
+
+  .form-card {
+    padding: 20px;
+  }
+}
