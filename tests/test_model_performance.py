@@ -36,17 +36,3 @@ def test_model_performance():
         f"F1-score macro abaixo do esperado: {score:.4f}. "
         f"Threshold mínimo: {MINIMUM_F1_MACRO:.2f}"
     )
-
-        random_state=42,
-        stratify=y
-    )
-
-    y_pred = model.predict(X_test)
-    score = f1_score(y_test, y_pred, average="macro")
-
-    assert score >= MINIMUM_F1_MACRO, (
-        f"F1-score macro abaixo do esperado: {score:.4f}. "
-        f"Threshold mínimo: {MINIMUM_F1_MACRO:.2f}"
-    )
-
-
