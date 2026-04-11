@@ -87,6 +87,7 @@ O teste valida se o modelo atende ao threshold mínimo de desempenho definido pa
 - Dry Bean Dataset
 - Fonte: UCI Machine Learning Repository
 - URL: https://archive.ics.uci.edu/dataset/602/dry%2Bbean%2Bdataset
+- URL do repositório (devido a instabilidade): https://raw.githubusercontent.com/YannaCarolina/mvp-puc-qa-dry-bean/main/data/Dry_Bean_Dataset.xlsx
 
 ## Observações finais
 
