@@ -5,13 +5,14 @@ import pandas as pd
 from sklearn.metrics import f1_score
 from sklearn.model_selection import train_test_split
 
-MODEL_PATH = Path(__file__).resolve().parents[1] / "backend" / "best_dry_bean_model.joblib"
-DATASET_URL = "https://raw.githubusercontent.com/YannaCarolina/mvp-puc-qa-dry-bean/main/data/Dry_Bean_Dataset.xlsx"
+BASE_DIR = Path(__file__).resolve().parents[1]
+MODEL_PATH = BASE_DIR / "backend" / "best_dry_bean_model.joblib"
+DATASET_PATH = BASE_DIR / "data" / "Dry_Bean_Dataset.xlsx"
 MINIMUM_F1_MACRO = 0.90
 
 
 def load_dataset():
-    return pd.read_excel(DATASET_URL)
+    return pd.read_excel(DATASET_PATH)
 
 
 def test_model_performance():
