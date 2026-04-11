@@ -12,6 +12,8 @@ mvp-puc-qa-dry-bean/
 │   ├── app.py
 │   ├── best_dry_bean_model.joblib
 │   └── requirements.txt
+├── data/
+│   └── Dry_Bean_Dataset.xlsx
 ├── frontend/
 │   ├── index.html
 │   ├── script.js
